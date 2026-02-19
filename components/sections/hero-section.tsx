@@ -81,7 +81,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="group bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-8 border border-white/20 hover:border-forest/50 hover:bg-white/20 transition-all duration-300"
+              className="group bg-white/20 backdrop-blur-lg rounded-2xl p-4 sm:p-8 border border-white/30 hover:border-forest/50 hover:bg-white/30 transition-all duration-300"
             >
               <metric.icon className="w-8 h-8 sm:w-12 sm:h-12 text-forest-light mx-auto mb-2 sm:mb-4 stroke-[1.5]" />
               <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
