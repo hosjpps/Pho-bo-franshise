@@ -18,7 +18,7 @@ const menuItems = [
     featured: true,
   },
   {
-    name: "Блинчики Нэмы",
+    name: "Нэм Га",
     description: "Завернутые в рисовую бумагу обжаренные блинчики с различной начинкой",
     image: "/Нэм.jpg",
     featured: true,

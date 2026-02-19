@@ -139,7 +139,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white/80 text-sm">Телефон</p>
-                    <a href="tel:+74951234567" className="text-lg font-semibold text-white hover:underline">+7 (495) 123-45-67</a>
+                    <a href="tel:+79255644234" className="text-lg font-semibold text-white hover:underline">+7 (925) 564-42-34</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -148,7 +148,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white/80 text-sm">Email</p>
-                    <a href="mailto:franchise@phobo.cafe" className="text-lg font-semibold text-white hover:underline">franchise@phobo.cafe</a>
+                    <a href="mailto:franch@phobo.cafe" className="text-lg font-semibold text-white hover:underline">franch@phobo.cafe</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

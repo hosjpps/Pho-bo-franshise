@@ -16,7 +16,7 @@ const concepts = [
     icon: Soup,
     title: "Главное блюдо",
     description: "Легендарный национальный суп Фо Бо – визитная карточка Вьетнама во всем мире",
-    image: "/images/concept/main-dish.jpg",
+    image: "/Фо Бо.jpg",
   },
   {
     icon: Leaf,
