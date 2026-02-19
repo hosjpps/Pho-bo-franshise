@@ -35,9 +35,9 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
           style={{
-            backgroundImage: `url('/vietnamese-street-food-market-night-atmosphere-wit.jpg')`,
+            backgroundImage: `url('/hero-phobo.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />

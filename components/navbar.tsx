@@ -98,7 +98,7 @@ export function Navbar() {
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
               <Button asChild variant="default" className="bg-forest hover:bg-forest-dark text-white gap-2">
-                <a href="/presentation.pdf" download>
+                <a href="/Франшиза PhoBo от 04.06.2025 (2).pdf" download>
                   <Download className="w-4 h-4" />
                   Скачать презентацию
                 </a>
@@ -191,7 +191,7 @@ export function Navbar() {
               {/* CTA buttons */}
               <div className="px-5 py-4 border-t border-border/50 flex flex-col gap-2.5">
                 <Button asChild className="w-full bg-forest hover:bg-forest-dark text-white gap-2">
-                  <a href="/presentation.pdf" download>
+                  <a href="/Франшиза PhoBo от 04.06.2025 (2).pdf" download>
                     <Download className="w-4 h-4" />
                     Презентация
                   </a>
