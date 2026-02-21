@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/section-header"
 const menuItems = [
   {
     name: "Фо Бо",
-    description: "Суп с говядиной, бульон для которого готовится по классическим рецептам 8 часов",
+    description: "Суп с говядиной, бульон для которого готовится по классическим рецептам 12 часов",
     image: "/Фо Бо.jpg",
     featured: true,
   },
@@ -25,7 +25,7 @@ const menuItems = [
   },
   {
     name: "Том Ям",
-    description: "Популярный тайский суп с морепродуктами",
+    description: "Популярный вьетнамский суп с морепродуктами",
     image: "/Том Ям.jpg",
     featured: true,
   },

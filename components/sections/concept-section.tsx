@@ -16,7 +16,9 @@ const concepts = [
     icon: Soup,
     title: "Главное блюдо",
     description: "Легендарный национальный суп Фо Бо – визитная карточка Вьетнама во всем мире",
-    image: "/Фо Бо.jpg",
+    image: "/hf_20260220_184855_5e85fce2-c1f6-4150-a42d-c5e6403f43e1.jpeg",
+    imagePosition: "center 75%",
+    imageScale: 1.15,
   },
   {
     icon: Leaf,
@@ -79,8 +81,12 @@ export function ConceptSection() {
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <div
-                  className={`absolute inset-0 bg-cover transition-transform duration-500 group-hover:scale-110 ${concept.imagePosition === "top" ? "bg-top" : "bg-center"}`}
-                  style={{ backgroundImage: `url('${concept.image}')` }}
+                  className="absolute inset-0 bg-cover transition-transform duration-500 group-hover:scale-110"
+                  style={{
+                    backgroundImage: `url('${concept.image}')`,
+                    backgroundPosition: concept.imagePosition || "center",
+                    transform: concept.imageScale ? `scale(${concept.imageScale})` : undefined,
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </div>

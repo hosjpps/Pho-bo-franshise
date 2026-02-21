@@ -21,7 +21,7 @@ const formats = [
       { src: "/images/formats/foodcourt-aviapark.jpg", location: "Ходынский б-р, 4, ТЦ «Авиапарк», 4 этаж" },
       { src: "/images/formats/foodcourt-atrium-1.jpg", location: "ул. Земляной Вал, 33, ТРК «Атриум»" },
       { src: "/images/formats/foodcourt-atrium-2.jpg", location: "ул. Земляной Вал, 33, ТРК «Атриум»" },
-      { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Троицкий пр-т, 17, ТЦ «ЕвроПарк», фудмолл «Рестопорт»" },
+      { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Троицкий просп., 17, ТЦ «ЕвроПарк», 5 этаж, фудмолл «Рестопорт», Архангельск" },
       { src: "/images/formats/foodmall-yugozapadnaya.jpg", location: "пр-т Вернадского, 86В, ПАРК Фудхолл" },
     ] as FormatImage[],
     investment: { min: 8, max: 8 },
