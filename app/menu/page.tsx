@@ -83,15 +83,6 @@ const menuCategories = [
     ],
   },
   {
-    name: "Фреши",
-    items: [
-      { name: "Фреш Апельсин-Маракуйя", price: "390₽", description: "Свежевыжатый сок из апельсина и маракуйи", weight: "400 мл", image: "/Сок Апельсин-Маракуйя.jpg" },
-      { name: "Фреш Микс", price: "390₽", description: "Морковь, сельдерей, яблоко", weight: "400 мл", image: "/Микс соков.jpg" },
-      { name: "Фреш Ананас", price: "390₽", description: "Свежевыжатый ананасовый сок", weight: "400 мл", image: "/ананасовый фреш.jpg" },
-      { name: "Фреш Апельсин", price: "390₽", description: "Свежевыжатый апельсиновый сок", weight: "400 мл", image: "/сок апельсин.jpg" },
-    ],
-  },
-  {
     name: "Bubble Tea",
     items: [
       { name: "Улун", price: "490₽", description: "Bubble Tea на основе улуна", weight: "400 мл", image: "/улун.jpg" },

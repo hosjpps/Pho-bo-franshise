@@ -136,26 +136,31 @@ function YandexMap() {
 
       mapInstanceRef.current = map
 
-      // Custom icon presets
-      locations.forEach((loc) => {
-        const isIntl = "international" in loc && loc.international
+      // Clusterer with pin-shaped icons (inverted = pin shape)
+      const clusterer = new window.ymaps.Clusterer({
+        preset: "islands#invertedRedClusterIcons",
+        groupByCoordinates: false,
+        clusterDisableClickZoom: false,
+        clusterBalloonContentLayout: "cluster#balloonCarousel",
+      })
 
-        const placemark = new window.ymaps.Placemark(
+      const placemarks = locations.map((loc) => {
+        return new window.ymaps.Placemark(
           loc.coords,
           {
             balloonContentHeader: `<strong>${loc.name}</strong>`,
             balloonContentBody: loc.city,
             hintContent: loc.name,
+            iconContent: "1",
           },
           {
-            preset: isIntl
-              ? "islands#orangeFoodIcon"
-              : "islands#redFoodIcon",
+            preset: "islands#redCircleIcon",
           }
         )
-
-        map.geoObjects.add(placemark)
       })
+
+      clusterer.add(placemarks)
+      map.geoObjects.add(clusterer)
 
       setIsLoading(false)
     })
