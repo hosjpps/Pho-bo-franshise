@@ -12,14 +12,39 @@ import { SectionHeader } from "@/components/section-header"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    alert("Спасибо! Мы свяжемся с вами в ближайшее время.")
+
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem("contact-name") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("contact-phone") as HTMLInputElement).value,
+      email: (form.elements.namedItem("contact-email") as HTMLInputElement).value,
+      city: (form.elements.namedItem("contact-city") as HTMLInputElement).value,
+      message: (form.elements.namedItem("contact-message") as HTMLTextAreaElement).value,
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+
+      if (res.ok) {
+        setIsSuccess(true)
+        form.reset()
+      } else {
+        alert("Произошла ошибка. Попробуйте ещё раз или позвоните нам.")
+      }
+    } catch {
+      alert("Произошла ошибка. Попробуйте ещё раз или позвоните нам.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -98,21 +123,27 @@ export function ContactSection() {
                   className="rounded-xl border-border focus:border-forest focus:ring-forest resize-none"
                 />
               </div>
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full h-14 bg-forest hover:bg-forest-dark text-white text-lg rounded-xl gap-2"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  "Отправка..."
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Отправить заявку
-                  </>
-                )}
-              </Button>
+              {isSuccess ? (
+                <div className="w-full h-14 flex items-center justify-center bg-green-600 text-white text-lg rounded-xl font-semibold">
+                  Заявка отправлена! Мы скоро свяжемся с вами.
+                </div>
+              ) : (
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full h-14 bg-forest hover:bg-forest-dark text-white text-lg rounded-xl gap-2"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    "Отправка..."
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Отправить заявку
+                    </>
+                  )}
+                </Button>
+              )}
               <p className="text-xs text-muted-foreground text-center mt-3">
                 Нажимая на кнопку «Отправить», вы соглашаетесь с{" "}
                 <a href="/privacy" className="text-forest underline hover:no-underline">

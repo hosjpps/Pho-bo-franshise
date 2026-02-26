@@ -4,7 +4,7 @@ import { NetworkSection } from "@/components/sections/network-section"
 import { FormatsSection } from "@/components/sections/formats-section"
 import { MenuSection } from "@/components/sections/menu-section"
 import { AdvantagesSection } from "@/components/sections/advantages-section"
-import { PartnersSection } from "@/components/sections/partners-section"
+// import { PartnersSection } from "@/components/sections/partners-section"
 import { StepsSection } from "@/components/sections/steps-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { Navbar } from "@/components/navbar"
@@ -20,7 +20,7 @@ export default function FranchisePage() {
       <FormatsSection />
       <MenuSection />
       <AdvantagesSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <StepsSection />
       <ContactSection />
       <Footer />
