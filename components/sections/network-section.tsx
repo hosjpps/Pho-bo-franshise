@@ -7,14 +7,14 @@ import { SectionHeader } from "@/components/section-header"
 import { AnimatedCounter } from "@/components/animated-counter"
 
 const stats = [
-  { value: 75, label: "Кафе по всему миру", description: "Работают в нашей сети", suffix: "" },
+  { value: 76, label: "Кафе по всему миру", description: "Работают в нашей сети", suffix: "" },
   { value: 2006, label: "Год основания", description: "Первый ресторан в Москве", suffix: "" },
   { value: 20, label: "Лет опыта", description: "В управлении бизнесом", suffix: "+" },
   { value: 46, label: "Заведений", description: "Работают по франшизе", suffix: "" },
-  { value: 4, label: "Страны", description: "ОАЭ, Армения, Грузия, Вьетнам", suffix: "" },
+  { value: 5, label: "Стран", description: "ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан", suffix: "" },
 ]
 
-// PhoBo locations (75 точек: 71 РФ + 4 международных)
+// PhoBo locations (76 точек: 71 РФ + 5 международных)
 const locations = [
   // Москва и МО (38)
   { name: "PhoBo Авиапарк", coords: [55.7893, 37.5301], city: "Москва" },
@@ -102,11 +102,12 @@ const locations = [
   { name: "PhoBo Лазаревское", coords: [43.9040, 39.3280], city: "Сочи" },
   { name: "PhoBo Грозный", coords: [43.3170, 45.6980], city: "Грозный" },
   { name: "PhoBo Новокузнецк", coords: [53.7570, 87.1360], city: "Новокузнецк" },
-  // Международные (4)
+  // Международные (5)
   { name: "PhoBo Дубай", coords: [25.0760, 55.1380], city: "Дубай, ОАЭ", international: true },
   { name: "PhoBo Ереван", coords: [40.1792, 44.4991], city: "Ереван, Армения", international: true },
   { name: "PhoBo Тбилиси", coords: [41.7151, 44.8271], city: "Тбилиси, Грузия", international: true },
   { name: "PhoBo Фукуок", coords: [10.2270, 103.9570], city: "Фукуок, Вьетнам", international: true },
+  { name: "PhoBo Бишкек", coords: [42.8762, 74.6147], city: "Бишкек, Кыргызстан", international: true },
 ]
 
 declare global {
@@ -227,11 +228,11 @@ export function NetworkSection() {
         >
           <div className="flex items-center gap-2 px-5 py-3 bg-forest/10 rounded-full">
             <MapPin className="w-5 h-5 text-forest" />
-            <span className="text-sm font-semibold text-foreground">75 точек по всему миру</span>
+            <span className="text-sm font-semibold text-foreground">76 точек по всему миру</span>
           </div>
           <div className="flex items-center gap-2 px-5 py-3 bg-red-50 rounded-full">
             <Globe className="w-5 h-5 text-red-500" />
-            <span className="text-sm font-semibold text-foreground">4 страны: ОАЭ, Армения, Грузия, Вьетнам</span>
+            <span className="text-sm font-semibold text-foreground">5 стран: ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан</span>
           </div>
         </motion.div>
 
