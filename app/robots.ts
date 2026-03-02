@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://phobo.cafe/sitemap.xml",
+    sitemap: "https://franchise.phobo.cafe/sitemap.xml",
   }
 }
