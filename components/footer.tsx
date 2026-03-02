@@ -37,7 +37,7 @@ export function Footer() {
           />
           <div className="flex justify-center gap-6 mb-4">
             {[
-              { value: "75", label: "Кафе" },
+              { value: "76", label: "Кафе" },
               { value: "20+", label: "Лет опыта" },
               { value: "46", label: "Франшиз" },
             ].map((stat) => (
@@ -137,7 +137,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mb-6">
               {[
-                { value: "75", label: "Кафе" },
+                { value: "76", label: "Кафе" },
                 { value: "20+", label: "Лет опыта" },
                 { value: "46", label: "Франшиз" },
               ].map((stat) => (

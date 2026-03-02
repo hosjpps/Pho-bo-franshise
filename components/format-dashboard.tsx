@@ -49,7 +49,7 @@ export function FormatDashboard({ format }: { format: Format }) {
       <div>
         <div className="flex items-center justify-between mb-4">
           <h4 className="text-lg font-semibold text-foreground">Возврат инвестиций</h4>
-          <span className="px-3 py-1 bg-red-100 text-red-600 text-sm font-semibold rounded-full">
+          <span className="px-3 py-1 bg-red-100 text-red-800 text-sm font-semibold rounded-full">
             от {format.roi} месяцев
           </span>
         </div>

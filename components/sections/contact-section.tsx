@@ -197,7 +197,7 @@ export function ContactSection() {
             {/* Trust badges */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { value: "75", label: "Кафе" },
+                { value: "76", label: "Кафе" },
                 { value: "20+", label: "Лет опыта" },
                 { value: "46", label: "Франшиз" },
               ].map((badge) => (

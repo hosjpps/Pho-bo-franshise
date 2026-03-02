@@ -163,6 +163,16 @@ function YandexMap() {
       clusterer.add(placemarks)
       map.geoObjects.add(clusterer)
 
+      // Fix Yandex Maps copyright link for SEO (empty href + no text)
+      setTimeout(() => {
+        const copyrightLink = mapRef.current?.querySelector('a[class*="copyright__logo"]')
+        if (copyrightLink) {
+          copyrightLink.setAttribute("href", "https://yandex.ru/maps")
+          copyrightLink.setAttribute("aria-label", "Яндекс Карты")
+          copyrightLink.textContent = "Яндекс Карты"
+        }
+      }, 1000)
+
       setIsLoading(false)
     })
   }, [])

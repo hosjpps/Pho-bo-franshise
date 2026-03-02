@@ -155,7 +155,7 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`rounded-full transition-all ${i === currentIndex ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/50 hover:bg-white/70"}`}
+                className={`rounded-full transition-all min-w-[24px] min-h-[24px] flex items-center justify-center ${i === currentIndex ? "w-6 h-3 bg-white" : "w-3 h-3 bg-white/50 hover:bg-white/70"}`}
                 aria-label={`Фото ${i + 1}`}
               />
             ))}
@@ -172,7 +172,7 @@ function FormatKeyMetrics({ format }: { format: (typeof formats)[0] }) {
     { label: "Чистая прибыль", value: `до ${format.profit}%` },
     { label: "Возврат инвестиций", value: `от ${format.roi} мес` },
     { label: "Оборот", value: `от ${format.revenue.min} млн ₽/мес` },
-    { label: "Точка безубыточности", value: `${format.breakeven.min}-${format.breakeven.max} мес` },
+    { label: "Точка безубыточности", value: format.breakeven.min === format.breakeven.max ? `${format.breakeven.min} мес` : `${format.breakeven.min}-${format.breakeven.max} мес` },
     { label: "Паушальный взнос", value: `${format.pauschal} млн ₽` },
     { label: "Роялти", value: `${format.royalty}%` },
   ]
