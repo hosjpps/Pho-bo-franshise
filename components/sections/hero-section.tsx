@@ -54,7 +54,7 @@ export function HeroSection() {
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
             Франшиза сети кафе
             <br />
-            <span className="text-red-500">PhởBò</span>
+            <span className="text-white">Phở</span><span className="text-red-500">Bò</span>
           </h1>
         </motion.div>
 
