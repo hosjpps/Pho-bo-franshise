@@ -150,12 +150,12 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
 
         {/* Carousel dots + progress */}
         {format.images.length > 1 && (
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
             {format.images.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`rounded-full transition-all min-w-[24px] min-h-[24px] flex items-center justify-center ${i === currentIndex ? "w-6 h-3 bg-white" : "w-3 h-3 bg-white/50 hover:bg-white/70"}`}
+                className={`rounded-full transition-all p-1.5 ${i === currentIndex ? "bg-white w-2.5 h-2.5" : "bg-white/50 hover:bg-white/70 w-2 h-2"}`}
                 aria-label={`Фото ${i + 1}`}
               />
             ))}
