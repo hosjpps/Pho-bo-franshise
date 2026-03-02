@@ -117,16 +117,47 @@ declare global {
 }
 
 function YandexMap() {
+  const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<any>(null)
   const observerRef = useRef<MutationObserver | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+
+  // Lazy load: only start loading map when section is scrolled into view
+  useEffect(() => {
+    if (!containerRef.current) return
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); io.disconnect() } },
+      { rootMargin: "200px" }
+    )
+    io.observe(containerRef.current)
+    return () => io.disconnect()
+  }, [])
 
   const initMap = useCallback(() => {
     if (!mapRef.current || mapInstanceRef.current) return
 
     window.ymaps.ready(() => {
       if (!mapRef.current || mapInstanceRef.current) return
+
+      // Fix Yandex Maps copyright links for SEO (empty href + no text)
+      const fixCopyrightLinks = (container: Element) => {
+        container.querySelectorAll("a").forEach((link) => {
+          const href = link.getAttribute("href")
+          if (href === "" || href === null) {
+            link.setAttribute("href", "https://yandex.ru/maps")
+          }
+          if (!link.textContent?.trim() && !link.getAttribute("aria-label")) {
+            link.setAttribute("aria-label", "Яндекс Карты")
+          }
+        })
+      }
+
+      observerRef.current = new MutationObserver(() => {
+        if (mapRef.current) fixCopyrightLinks(mapRef.current)
+      })
+      observerRef.current.observe(mapRef.current, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] })
 
       const map = new window.ymaps.Map(mapRef.current, {
         center: [55.0, 50.0],
@@ -137,8 +168,8 @@ function YandexMap() {
       })
 
       mapInstanceRef.current = map
+      fixCopyrightLinks(mapRef.current)
 
-      // Clusterer with pin-shaped icons (inverted = pin shape)
       const clusterer = new window.ymaps.Clusterer({
         preset: "islands#invertedRedClusterIcons",
         groupByCoordinates: false,
@@ -163,43 +194,21 @@ function YandexMap() {
 
       clusterer.add(placemarks)
       map.geoObjects.add(clusterer)
-
-      // Fix Yandex Maps copyright link for SEO (empty href + no text)
-      // Use MutationObserver to catch it as soon as it appears in the DOM
-      const fixCopyrightLink = (container: Element) => {
-        const links = container.querySelectorAll('a[class*="copyright"]')
-        links.forEach((link) => {
-          const href = link.getAttribute("href")
-          if (!href || href === "") {
-            link.setAttribute("href", "https://yandex.ru/maps")
-          }
-          if (!link.textContent?.trim()) {
-            link.setAttribute("aria-label", "Яндекс Карты")
-            link.textContent = "Яндекс Карты"
-          }
-        })
-      }
-
-      if (mapRef.current) {
-        fixCopyrightLink(mapRef.current)
-        observerRef.current = new MutationObserver(() => {
-          if (mapRef.current) fixCopyrightLink(mapRef.current)
-        })
-        observerRef.current.observe(mapRef.current, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] })
-      }
+      fixCopyrightLinks(mapRef.current)
 
       setIsLoading(false)
     })
   }, [])
 
+  // Load Yandex Maps script only when visible
   useEffect(() => {
-    // Check if ymaps is already loaded
+    if (!isVisible) return
+
     if (window.ymaps) {
       initMap()
       return
     }
 
-    // Load Yandex Maps API script
     const script = document.createElement("script")
     script.src = "https://api-maps.yandex.ru/2.1/?apikey=none&lang=ru_RU"
     script.async = true
@@ -213,10 +222,10 @@ function YandexMap() {
         mapInstanceRef.current = null
       }
     }
-  }, [initMap])
+  }, [isVisible, initMap])
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[500px] rounded-3xl overflow-hidden border border-forest/10">
+    <div ref={containerRef} className="relative w-full h-[400px] sm:h-[500px] rounded-3xl overflow-hidden border border-forest/10">
       <div ref={mapRef} className="w-full h-full" />
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-forest/5">
