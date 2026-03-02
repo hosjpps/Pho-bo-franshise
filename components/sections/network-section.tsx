@@ -119,6 +119,7 @@ declare global {
 function YandexMap() {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<any>(null)
+  const observerRef = useRef<MutationObserver | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
   const initMap = useCallback(() => {
@@ -164,14 +165,28 @@ function YandexMap() {
       map.geoObjects.add(clusterer)
 
       // Fix Yandex Maps copyright link for SEO (empty href + no text)
-      setTimeout(() => {
-        const copyrightLink = mapRef.current?.querySelector('a[class*="copyright__logo"]')
-        if (copyrightLink) {
-          copyrightLink.setAttribute("href", "https://yandex.ru/maps")
-          copyrightLink.setAttribute("aria-label", "Яндекс Карты")
-          copyrightLink.textContent = "Яндекс Карты"
-        }
-      }, 1000)
+      // Use MutationObserver to catch it as soon as it appears in the DOM
+      const fixCopyrightLink = (container: Element) => {
+        const links = container.querySelectorAll('a[class*="copyright"]')
+        links.forEach((link) => {
+          const href = link.getAttribute("href")
+          if (!href || href === "") {
+            link.setAttribute("href", "https://yandex.ru/maps")
+          }
+          if (!link.textContent?.trim()) {
+            link.setAttribute("aria-label", "Яндекс Карты")
+            link.textContent = "Яндекс Карты"
+          }
+        })
+      }
+
+      if (mapRef.current) {
+        fixCopyrightLink(mapRef.current)
+        observerRef.current = new MutationObserver(() => {
+          if (mapRef.current) fixCopyrightLink(mapRef.current)
+        })
+        observerRef.current.observe(mapRef.current, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] })
+      }
 
       setIsLoading(false)
     })
@@ -192,6 +207,7 @@ function YandexMap() {
     document.head.appendChild(script)
 
     return () => {
+      observerRef.current?.disconnect()
       if (mapInstanceRef.current) {
         mapInstanceRef.current.destroy()
         mapInstanceRef.current = null
