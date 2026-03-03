@@ -10,7 +10,7 @@ const stats = [
   { value: 76, label: "Кафе по всему миру", description: "Работают в нашей сети", suffix: "" },
   { value: 2006, label: "Год основания", description: "Первый ресторан в Москве", suffix: "" },
   { value: 20, label: "Лет опыта", description: "В управлении бизнесом", suffix: "+" },
-  { value: 46, label: "Заведений", description: "Работают по франшизе", suffix: "" },
+  { value: 14, label: "Заведений", description: "Работают по франшизе", suffix: "" },
   { value: 5, label: "Стран", description: "ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан", suffix: "" },
 ]
 

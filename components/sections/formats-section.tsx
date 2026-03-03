@@ -26,7 +26,7 @@ const formats = [
     ] as FormatImage[],
     investment: { min: 8, max: 8 },
     profit: 25,
-    roi: 9,
+    roi: 12,
     revenue: { min: 4, max: 4 },
     breakeven: { min: 2, max: 2 },
     royalty: 6,
@@ -48,7 +48,7 @@ const formats = [
     ] as FormatImage[],
     investment: { min: 9, max: 12 },
     profit: 25,
-    roi: 14,
+    roi: 12,
     revenue: { min: 3, max: 4 },
     breakeven: { min: 3, max: 5 },
     royalty: 6,
@@ -150,12 +150,12 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
 
         {/* Carousel dots + progress */}
         {format.images.length > 1 && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
             {format.images.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`rounded-full transition-all p-1.5 ${i === currentIndex ? "bg-white w-2.5 h-2.5" : "bg-white/50 hover:bg-white/70 w-2 h-2"}`}
+                className={`relative rounded-full transition-all before:absolute before:-inset-2 before:content-[''] ${i === currentIndex ? "bg-white w-2 h-2" : "bg-white/50 hover:bg-white/70 w-1.5 h-1.5"}`}
                 aria-label={`Фото ${i + 1}`}
               />
             ))}

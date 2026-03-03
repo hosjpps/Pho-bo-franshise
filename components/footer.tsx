@@ -16,7 +16,7 @@ const footerLinks = {
     { label: "Этапы запуска", href: "/#steps" },
   ],
   legal: [
-    { label: "Политика конфиденциальности", href: "/privacy" },
+    { label: "Политика обработки персональных данных", href: "/privacy" },
     { label: "Политика cookies", href: "/cookies" },
     { label: "Договор оферты", href: "/offer" },
   ],
@@ -28,18 +28,15 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile: compact layout */}
         <div className="sm:hidden text-center mb-8">
-          <img
-            src="/images/phobo-logo.png"
-            alt="PhoBo"
-            width={400}
-            height={144}
-            className="h-10 w-auto mx-auto mb-4"
-          />
+          <div className="mb-4">
+            <span className="text-3xl font-bold text-white">Phở</span><span className="text-3xl font-bold text-red-500">Bò</span>
+            <p className="text-[10px] tracking-[0.2em] text-white/60 uppercase">Вьетнамская кухня</p>
+          </div>
           <div className="flex justify-center gap-6 mb-4">
             {[
               { value: "76", label: "Кафе" },
               { value: "20+", label: "Лет опыта" },
-              { value: "46", label: "Франшиз" },
+              { value: "14", label: "Франшиз" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-lg font-bold text-white">{stat.value}</p>
@@ -123,14 +120,9 @@ export function Footer() {
         <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="mb-6 -ml-2">
-              <img
-                src="/images/phobo-logo.png"
-                alt="PhoBo"
-                width={400}
-                height={144}
-                className="h-12 w-auto"
-              />
+            <div className="mb-6">
+              <span className="text-4xl font-bold text-white">Phở</span><span className="text-4xl font-bold text-red-500">Bò</span>
+              <p className="text-[10px] tracking-[0.2em] text-white/60 uppercase">Вьетнамская кухня</p>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Сеть кафе вьетнамской кухни с 2006 года. Аутентичные блюда и уникальная атмосфера.
@@ -139,7 +131,7 @@ export function Footer() {
               {[
                 { value: "76", label: "Кафе" },
                 { value: "20+", label: "Лет опыта" },
-                { value: "46", label: "Франшиз" },
+                { value: "14", label: "Франшиз" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-lg font-bold text-white">{stat.value}</p>
