@@ -22,7 +22,7 @@ const metrics = [
   },
   {
     icon: Calendar,
-    value: 9,
+    value: 12,
     prefix: "от ",
     suffix: " мес",
     label: "Окупаемость",
@@ -52,7 +52,9 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
-            Франшиза сети кафе
+            Франшиза сети
+            <br />
+            вьетнамской кухни
             <br />
             <span className="text-white">Phở</span><span className="text-red-500">Bò</span>
           </h1>
@@ -64,7 +66,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-12"
         >
-          Откройте своё успешное кафе вьетнамской кухни с проверенной бизнес-моделью и поддержкой на каждом этапе
+          Откройте своё успешное кафе с проверенной бизнес-моделью и поддержкой на каждом этапе
         </motion.p>
 
         {/* Metrics Cards */}

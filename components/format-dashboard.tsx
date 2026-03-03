@@ -24,18 +24,16 @@ interface Format {
 export function FormatDashboard({ format }: { format: Format }) {
   const roiData = useMemo(() => {
     const inv = format.investment.min
-    return [
-      { month: "Месяц 1", value: -inv },
-      { month: "Месяц 2", value: -inv * 0.92 },
-      { month: "Месяц 3", value: -inv * 0.8 },
-      { month: "Месяц 4", value: -inv * 0.65 },
-      { month: "Месяц 5", value: -inv * 0.5 },
-      { month: "Месяц 6", value: -inv * 0.35 },
-      { month: "Месяц 7", value: -inv * 0.2 },
-      { month: "Месяц 8", value: -inv * 0.07 },
-      { month: "Месяц 9", value: inv * 0.05 },
-      { month: "Месяц 10", value: inv * 0.2 },
-    ]
+    const roi = format.roi
+    const points = roi + 2
+    return Array.from({ length: points }, (_, i) => {
+      const month = i + 1
+      const progress = month / roi
+      const value = progress < 1
+        ? -inv * (1 - progress * 1.05)
+        : inv * (progress - 1) * 0.8
+      return { month: `Месяц ${month}`, value: Math.round(value * 100) / 100 }
+    })
   }, [format])
 
   return (

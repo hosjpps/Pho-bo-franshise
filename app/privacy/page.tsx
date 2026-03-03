@@ -46,7 +46,7 @@ export default function PrivacyPage() {
               Настоящая Политика конфиденциальности и обработки персональных данных (далее — Политика)
               разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных»
               и определяет порядок обработки и защиты информации о физических лицах (далее — Субъекты
-              персональных данных), использующих сайт phobo.cafe/franchise (далее — Сайт).
+              персональных данных), использующих сайт franchise.phobo.cafe (далее — Сайт).
             </p>
             <p className="text-muted-foreground leading-relaxed mb-3">
               <strong className="text-foreground">Оператор персональных данных:</strong><br />
@@ -185,8 +185,8 @@ export default function PrivacyPage() {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-3">
               <strong className="text-foreground">Email:</strong>{" "}
-              <a href="mailto:info@vietcafe.ru" className="text-forest hover:text-forest-dark underline">
-                info@vietcafe.ru
+              <a href="mailto:franch@phobo.cafe" className="text-forest hover:text-forest-dark underline">
+                franch@phobo.cafe
               </a>
             </p>
             <p className="text-muted-foreground leading-relaxed">
@@ -219,7 +219,7 @@ export default function PrivacyPage() {
               <li><strong className="text-foreground">Адрес:</strong> г. Москва, переулок Газетный, дом 3-5, строение 1</li>
               <li>
                 <strong className="text-foreground">Email:</strong>{" "}
-                <a href="mailto:info@vietcafe.ru" className="text-forest hover:text-forest-dark underline">info@vietcafe.ru</a>
+                <a href="mailto:franch@phobo.cafe" className="text-forest hover:text-forest-dark underline">franch@phobo.cafe</a>
               </li>
               <li>
                 <strong className="text-foreground">Телефон:</strong>{" "}
@@ -239,7 +239,7 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground leading-relaxed">
               Действующая редакция Политики доступна на Сайте по адресу:{" "}
               <Link href="/privacy" className="text-forest hover:text-forest-dark underline">
-                phobo.cafe/franchise/privacy
+                franchise.phobo.cafe/privacy
               </Link>
             </p>
           </section>

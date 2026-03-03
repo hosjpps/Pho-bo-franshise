@@ -170,7 +170,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white/80 text-sm">Телефон</p>
-                    <a href="tel:+79255644234" className="text-lg font-semibold text-white hover:underline">+7 (925) 564-42-34</a>
+                    <a href="tel:+74952151199" className="text-lg font-semibold text-white hover:underline">+7 (495) 215-11-99</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -199,7 +199,7 @@ export function ContactSection() {
               {[
                 { value: "76", label: "Кафе" },
                 { value: "20+", label: "Лет опыта" },
-                { value: "46", label: "Франшиз" },
+                { value: "14", label: "Франшиз" },
               ].map((badge) => (
                 <div key={badge.label} className="text-center p-4 bg-muted/50 rounded-2xl">
                   <p className="text-2xl font-bold text-forest">{badge.value}</p>

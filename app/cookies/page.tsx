@@ -30,7 +30,7 @@ export default function CookiesPage() {
             transition={{ delay: 0.1 }}
             className="text-lg text-white/80"
           >
-            Информация о том, как мы используем cookie на сайте phobo.cafe/franchise
+            Информация о том, как мы используем cookie на сайте franchise.phobo.cafe
           </motion.p>
         </div>
       </div>
@@ -156,7 +156,7 @@ export default function CookiesPage() {
             <ul className="list-none space-y-2 text-muted-foreground">
               <li>
                 <strong className="text-foreground">Email:</strong>{" "}
-                <a href="mailto:info@vietcafe.ru" className="text-forest hover:text-forest-dark underline">info@vietcafe.ru</a>
+                <a href="mailto:franch@phobo.cafe" className="text-forest hover:text-forest-dark underline">franch@phobo.cafe</a>
               </li>
               <li>
                 <strong className="text-foreground">Телефон:</strong>{" "}
