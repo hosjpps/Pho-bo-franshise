@@ -41,8 +41,8 @@ export default function OfferPage() {
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">1. Общие положения</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">
-              Настоящий документ является публичной офертой ООО «Ванлизингэкспозито»
-              (ИНН: 7715336153, ОГРН: 1027739508103), именуемого в дальнейшем «Исполнитель»,
+              Настоящий документ является публичной офертой ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ»
+              (ИНН: 7701388063, ОГРН: 1147746177556), именуемого в дальнейшем «Исполнитель»,
               адресованной любому физическому или юридическому лицу, именуемому в дальнейшем
               «Заказчик», на заключение договора на условиях, изложенных ниже.
             </p>
@@ -67,8 +67,8 @@ export default function OfferPage() {
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">3. Контактная информация</h2>
             <ul className="list-none space-y-2 text-muted-foreground">
-              <li><strong className="text-foreground">Организация:</strong> ООО «Ванлизингэкспозито»</li>
-              <li><strong className="text-foreground">Адрес:</strong> г. Москва, переулок Газетный, дом 3-5, строение 1</li>
+              <li><strong className="text-foreground">Организация:</strong> ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ»</li>
+              <li><strong className="text-foreground">Адрес:</strong> 107014, г. Москва, ул. Егерская, д. 1, помещ. VI ком. 2;9, этаж 1</li>
               <li>
                 <strong className="text-foreground">Email:</strong>{" "}
                 <a href="mailto:franch@phobo.cafe" className="text-forest hover:text-forest-dark underline">franch@phobo.cafe</a>
@@ -100,7 +100,7 @@ export default function OfferPage() {
       <div className="bg-muted/50 py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-muted-foreground text-sm">
-            ООО «Ванлизингэкспозито» | ИНН 7715336153 | ОГРН 1027739508103
+            ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ» | ИНН 7701388063 | ОГРН 1147746177556
           </p>
           <Link
             href="/"
