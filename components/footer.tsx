@@ -16,7 +16,7 @@ const footerLinks = {
     { label: "Этапы запуска", href: "/#steps" },
   ],
   legal: [
-    { label: "Политика обработки персональных данных", href: "/privacy" },
+    { label: "Политика конфиденциальности и обработки персональных данных", href: "/privacy" },
     { label: "Политика cookies", href: "/cookies" },
     { label: "Договор оферты", href: "/offer" },
   ],
