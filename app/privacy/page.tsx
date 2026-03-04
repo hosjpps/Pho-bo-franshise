@@ -50,9 +50,9 @@ export default function PrivacyPage() {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-3">
               <strong className="text-foreground">Оператор персональных данных:</strong><br />
-              ООО «Ванлизингэкспозито»<br />
-              ИНН: 7715336153, ОГРН: 1027739508103<br />
-              Юридический адрес: г. Москва, переулок Газетный, дом 3-5, строение 1
+              ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ»<br />
+              ИНН: 7701388063, ОГРН: 1147746177556<br />
+              Юридический адрес: 107014, г. Москва, ул. Егерская, д. 1, помещ. VI ком. 2;9, этаж 1
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Использование Сайта означает безоговорочное согласие Пользователя с настоящей Политикой
@@ -215,8 +215,8 @@ export default function PrivacyPage() {
               По вопросам, связанным с обработкой персональных данных, Пользователь может обратиться к Оператору:
             </p>
             <ul className="list-none space-y-2 text-muted-foreground">
-              <li><strong className="text-foreground">Оператор:</strong> ООО «Ванлизингэкспозито»</li>
-              <li><strong className="text-foreground">Адрес:</strong> г. Москва, переулок Газетный, дом 3-5, строение 1</li>
+              <li><strong className="text-foreground">Оператор:</strong> ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ»</li>
+              <li><strong className="text-foreground">Адрес:</strong> 107014, г. Москва, ул. Егерская, д. 1, помещ. VI ком. 2;9, этаж 1</li>
               <li>
                 <strong className="text-foreground">Email:</strong>{" "}
                 <a href="mailto:franch@phobo.cafe" className="text-forest hover:text-forest-dark underline">franch@phobo.cafe</a>
@@ -250,7 +250,7 @@ export default function PrivacyPage() {
       <div className="bg-muted/50 py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-muted-foreground text-sm">
-            ООО «Ванлизингэкспозито» | ИНН 7715336153 | ОГРН 1027739508103
+            ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ» | ИНН 7701388063 | ОГРН 1147746177556
           </p>
           <Link
             href="/"

@@ -171,7 +171,7 @@ export default function CookiesPage() {
       <div className="bg-muted/50 py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-muted-foreground text-sm">
-            ООО «Ванлизингэкспозито» | ИНН 7715336153 | ОГРН 1027739508103
+            ООО «ВЬЕТКАФЕ МЕНЕДЖМЕНТ» | ИНН 7701388063 | ОГРН 1147746177556
           </p>
           <Link
             href="/"
