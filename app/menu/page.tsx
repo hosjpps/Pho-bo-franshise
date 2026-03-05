@@ -180,9 +180,8 @@ export default function MenuPage() {
                   >
                     <DishImage src={item.image} alt={item.name} />
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-3 mb-1">
+                      <div className="mb-1">
                         <h3 className="text-lg font-bold text-foreground">{item.name}</h3>
-                        <span className="text-lg font-bold text-forest whitespace-nowrap">{item.price}</span>
                       </div>
                       <p className="text-sm text-muted-foreground mb-1">{item.description}</p>
                       {item.weight && (
@@ -201,7 +200,7 @@ export default function MenuPage() {
       <div className="bg-muted/50 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-muted-foreground text-sm">
-            Цены могут отличаться в зависимости от региона. Актуальное меню уточняйте в кафе.
+            Актуальное меню и цены уточняйте в кафе.
           </p>
           <Link
             href="/"

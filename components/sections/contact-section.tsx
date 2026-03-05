@@ -171,6 +171,7 @@ export function ContactSection() {
                   <div>
                     <p className="text-white/80 text-sm">Телефон</p>
                     <a href="tel:+74952151199" className="text-lg font-semibold text-white hover:underline">+7 (495) 215-11-99</a>
+                    <p className="text-white/60 text-xs mt-0.5">(добавочный номер 2)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -180,15 +181,6 @@ export function ContactSection() {
                   <div>
                     <p className="text-white/80 text-sm">Email</p>
                     <a href="mailto:franch@phobo.cafe" className="text-lg font-semibold text-white hover:underline">franch@phobo.cafe</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="text-white/80 text-sm">Адрес</p>
-                    <p className="text-lg font-semibold">Москва, Россия</p>
                   </div>
                 </div>
               </div>

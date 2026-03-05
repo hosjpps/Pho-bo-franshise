@@ -11,7 +11,7 @@ const stats = [
   { value: 2006, label: "Год основания", description: "Первый ресторан в Москве", suffix: "" },
   { value: 20, label: "Лет опыта", description: "В управлении бизнесом", suffix: "+" },
   { value: 14, label: "Заведений", description: "Работают по франшизе", suffix: "" },
-  { value: 5, label: "Стран", description: "ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан", suffix: "" },
+  { value: 6, label: "Стран", description: "Россия, ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан", suffix: "" },
 ]
 
 // PhoBo locations (76 точек: 71 РФ + 5 международных)
@@ -267,7 +267,7 @@ export function NetworkSection() {
           </div>
           <div className="flex items-center gap-2 px-5 py-3 bg-red-50 rounded-full">
             <Globe className="w-5 h-5 text-red-500" />
-            <span className="text-sm font-semibold text-foreground">5 стран: ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан</span>
+            <span className="text-sm font-semibold text-foreground">6 стран: Россия, ОАЭ, Армения, Грузия, Вьетнам, Кыргызстан</span>
           </div>
         </motion.div>
 

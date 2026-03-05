@@ -1,14 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award, Users, Truck, Headphones, Target, Package } from "lucide-react"
+import { Monitor, Users, Truck, Headphones, Target, Package } from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
 
 const advantages = [
   {
-    icon: Award,
-    title: "Репутация бренда",
-    description: "Доступ в лучшие ТЦ и проверенная репутация с 2006 года",
+    icon: Monitor,
+    title: "IT поддержка",
+    description: "Программа лояльности, система автоматизации и специализированное ПО",
   },
   {
     icon: Target,
