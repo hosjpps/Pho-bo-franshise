@@ -31,14 +31,14 @@ const metrics = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-no-repeat"
+          className="absolute inset-0 bg-no-repeat bg-cover"
           style={{
-            backgroundImage: `url('/фон.jpg')`,
-            backgroundPosition: 'center 20%',
+            backgroundImage: `url('/1111.jpeg')`,
+            backgroundPosition: '65% 30%',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
@@ -46,7 +46,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-28 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-34 pb-14 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-12"
+          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8"
         >
           Откройте своё успешное кафе с проверенной бизнес-моделью и поддержкой на каждом этапе
         </motion.p>
@@ -75,7 +75,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto mb-12"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto mb-6"
         >
           {metrics.map((metric, index) => (
             <motion.div
@@ -118,7 +118,7 @@ export function HeroSection() {
             variant="outline"
             className="w-full sm:w-auto border-2 border-red-500 text-white hover:bg-red-500 text-lg px-8 py-6 rounded-xl gap-2 transition-all hover:scale-105 bg-transparent"
           >
-            <a href="/#contact">
+            <a href="/#contact" onClick={() => typeof window !== "undefined" && typeof window.ym === "function" && window.ym(107072733, "reachGoal", "cta_click")}>
               Оставить заявку
               <ArrowRight className="w-5 h-5" />
             </a>
@@ -131,7 +131,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

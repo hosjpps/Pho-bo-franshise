@@ -18,7 +18,6 @@ const footerLinks = {
   legal: [
     { label: "Политика конфиденциальности и обработки персональных данных", href: "/privacy" },
     { label: "Политика cookies", href: "/cookies" },
-    { label: "Договор оферты", href: "/offer" },
   ],
 }
 

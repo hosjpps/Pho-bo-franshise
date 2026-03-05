@@ -37,6 +37,9 @@ export function ContactSection() {
       if (res.ok) {
         setIsSuccess(true)
         form.reset()
+        if (typeof window !== "undefined" && typeof window.ym === "function") {
+          window.ym(107072733, "reachGoal", "form_submit", { city: data.city })
+        }
       } else {
         alert("Произошла ошибка. Попробуйте ещё раз или позвоните нам.")
       }
@@ -170,7 +173,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white/80 text-sm">Телефон</p>
-                    <a href="tel:+74952151199" className="text-lg font-semibold text-white hover:underline">+7 (495) 215-11-99</a>
+                    <a href="tel:+74952151199" className="text-lg font-semibold text-white hover:underline" onClick={() => typeof window !== "undefined" && typeof window.ym === "function" && window.ym(107072733, "reachGoal", "phone_click")}>+7 (495) 215-11-99</a>
                     <p className="text-white/60 text-xs mt-0.5">(добавочный номер 2)</p>
                   </div>
                 </div>
@@ -180,7 +183,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white/80 text-sm">Email</p>
-                    <a href="mailto:franch@phobo.cafe" className="text-lg font-semibold text-white hover:underline">franch@phobo.cafe</a>
+                    <a href="mailto:franch@phobo.cafe" className="text-lg font-semibold text-white hover:underline" onClick={() => typeof window !== "undefined" && typeof window.ym === "function" && window.ym(107072733, "reachGoal", "email_click")}>franch@phobo.cafe</a>
                   </div>
                 </div>
               </div>
