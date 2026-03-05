@@ -130,38 +130,34 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
         {/* Glass address card */}
         {currentImage.location && (
           <div
-            className="absolute bottom-5 left-4 right-4 bg-white/20 backdrop-blur-2xl rounded-2xl px-5 py-4 border border-white/30 shadow-lg"
+            className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/20 backdrop-blur-2xl rounded-xl px-3 py-2 border border-white/30 shadow-lg"
             style={{
               WebkitBackdropFilter: "blur(40px) saturate(200%)",
               backdropFilter: "blur(40px) saturate(200%)",
             }}
           >
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="text-xs text-white/80">Адрес заведения</p>
-                <p className="text-sm font-semibold">{currentImage.location}</p>
-              </div>
+            <div className="flex items-center gap-2 text-white">
+              <MapPin className="w-4 h-4 text-white flex-shrink-0" />
+              <p className="text-xs font-medium truncate">{currentImage.location}</p>
             </div>
           </div>
         )}
 
-        {/* Carousel dots + progress */}
-        {format.images.length > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-            {format.images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                className={`relative rounded-full transition-all before:absolute before:-inset-2 before:content-[''] ${i === currentIndex ? "bg-white w-2 h-2" : "bg-white/50 hover:bg-white/70 w-1.5 h-1.5"}`}
-                aria-label={`Фото ${i + 1}`}
-              />
-            ))}
-          </div>
-        )}
       </div>
+
+      {/* Carousel dots — below image */}
+      {format.images.length > 1 && (
+        <div className="flex justify-center gap-2 pt-3">
+          {format.images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`relative rounded-full transition-all before:absolute before:-inset-2 before:content-[''] ${i === currentIndex ? "bg-forest w-2 h-2" : "bg-forest/30 hover:bg-forest/50 w-1.5 h-1.5"}`}
+              aria-label={`Фото ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
