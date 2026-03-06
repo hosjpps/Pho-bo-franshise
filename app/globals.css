@@ -40,9 +40,9 @@
   --radius: 0.75rem;
 
   /* Custom PhoBo Colors */
-  --forest: #2d5016;
-  --forest-dark: #1f3a0f;
-  --forest-light: #4a7f28;
+  --forest: #1B6457;
+  --forest-dark: #144a40;
+  --forest-light: #238072;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -123,9 +123,9 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* PhoBo Brand Colors */
-  --color-forest: #2d5016;
-  --color-forest-dark: #1f3a0f;
-  --color-forest-light: #4a7f28;
+  --color-forest: #1B6457;
+  --color-forest-dark: #144a40;
+  --color-forest-light: #238072;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);

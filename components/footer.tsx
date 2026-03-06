@@ -6,14 +6,13 @@ const footerLinks = {
   company: [
     { label: "О компании", href: "/#concept" },
     { label: "Наши кафе", href: "/#network" },
-    { label: "Карьера", href: "/#contact" },
     { label: "Контакты", href: "/#contact" },
   ],
   franchise: [
-    { label: "Условия", href: "/#formats" },
     { label: "Форматы", href: "/#formats" },
     { label: "Преимущества", href: "/#advantages" },
     { label: "Этапы запуска", href: "/#steps" },
+    { label: "Оставить заявку", href: "/#contact" },
   ],
   legal: [
     { label: "Политика конфиденциальности и обработки персональных данных", href: "/privacy" },
@@ -196,13 +195,27 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal Links */}
+          {/* Contacts & Legal */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Документы</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-lg mb-6">Контакты</h4>
+            <ul className="space-y-3 mb-6">
+              <li>
+                <a href="tel:+74952151199" className="text-white/80 hover:text-white transition-colors">
+                  +7 (495) 215-11-99
+                </a>
+                <p className="text-white/50 text-xs">(добавочный номер 2)</p>
+              </li>
+              <li>
+                <a href="mailto:franch@phobo.cafe" className="text-white/80 hover:text-white transition-colors">
+                  franch@phobo.cafe
+                </a>
+              </li>
+            </ul>
+            <h4 className="font-semibold text-sm text-white/60 mb-3">Документы</h4>
+            <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-white/80 hover:text-white transition-colors">
+                  <a href={link.href} className="text-white/60 hover:text-white transition-colors text-sm">
                     {link.label}
                   </a>
                 </li>
