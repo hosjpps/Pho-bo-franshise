@@ -11,6 +11,7 @@ import { FormatRequirements } from "@/components/format-requirements"
 interface FormatImage {
   src: string
   location: string
+  position?: string
 }
 
 const formats = [
@@ -20,9 +21,11 @@ const formats = [
     images: [
       { src: "/images/formats/foodcourt-aviapark.jpg", location: "Ходынский б-р, 4, ТЦ «Авиапарк», 4 этаж" },
       { src: "/images/formats/foodcourt-atrium-1.jpg", location: "ул. Земляной Вал, 33, ТРК «Атриум»" },
-      { src: "/images/formats/foodcourt-atrium-2.jpg", location: "ул. Земляной Вал, 33, ТРК «Атриум»" },
-      { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Троицкий просп., 17, ТЦ «ЕвроПарк», 5 этаж, фудмолл «Рестопорт», Архангельск" },
-      { src: "/images/formats/foodmall-yugozapadnaya.jpg", location: "пр-т Вернадского, 86В, ПАРК Фудхолл" },
+      { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Троицкий просп., 17, ТЦ «ЕвроПарк», Архангельск" },
+      { src: "/метрополис.jpg", location: "Ленинградское ш., 16А, стр. 4, ТЦ «Метрополис»" },
+      { src: "/остров мечты.jpg", location: "пр-т Андропова, 1, ТРЦ «Остров Мечты»" },
+      { src: "/химки.jpg", location: "Микрорайон ИКЕА, 1, ТЦ «МЕГА Химки»" },
+      { src: "/вернадка.jpg", location: "пр-т Вернадского, 86В, ПАРК Фудхолл" },
     ] as FormatImage[],
     investment: { min: 8, max: 8 },
     profit: 25,
@@ -42,9 +45,12 @@ const formats = [
     id: "street",
     name: "Стрит-ритейл",
     images: [
-      { src: "/images/formats/street-novoslobodskaya-1.jpg", location: "ул. Чаянова, 22, стр. 4, Москва" },
-      { src: "/images/formats/street-novoslobodskaya-2.jpg", location: "ул. Чаянова, 22, стр. 4, Москва" },
-      { src: "/images/formats/street-novoslobodskaya-3.jpg", location: "ул. Чаянова, 22, стр. 4, Москва" },
+      { src: "/_MG_9549-HDR.jpg", location: "ул. Новослободская, Москва", position: "40% 5%" },
+      { src: "/_MG_9561-HDR.jpg", location: "ул. Новослободская, Москва" },
+      { src: "/_MG_9565-HDR.jpg", location: "ул. Новослободская, Москва" },
+      { src: "/парк горького 1.jpeg", location: "ул. Крымский Вал, 9, Парк Горького" },
+      { src: "/парк горького 2.jpeg", location: "ул. Крымский Вал, 9, Парк Горького" },
+      { src: "/парк горького 3.jpeg", location: "ул. Крымский Вал, 9, Парк Горького" },
     ] as FormatImage[],
     investment: { min: 9, max: 12 },
     profit: 25,
@@ -91,19 +97,22 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
     <div className="bg-background rounded-3xl p-6 sm:p-8 shadow-xl border border-forest/10">
       <h3 className="text-2xl font-bold text-foreground mb-6">Примеры {format.name}</h3>
       <div
-        className="relative rounded-2xl overflow-hidden h-64 sm:h-72 group"
+        className="relative rounded-2xl overflow-hidden group bg-black/5"
+        style={{ aspectRatio: "16 / 10" }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.img
             key={currentIndex}
-            initial={{ opacity: 0, scale: 1.05 }}
+            src={currentImage.src}
+            alt={currentImage.location || format.name}
+            initial={{ opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('${currentImage.src}')` }}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={currentImage.position ? { objectPosition: currentImage.position } : undefined}
           />
         </AnimatePresence>
 

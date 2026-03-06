@@ -1,7 +1,26 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx next dev --no-turbopack)"
+      "Bash(npx next dev --no-turbopack)",
+      "Bash(source ~/.zshrc)",
+      "Bash(export PATH=\"/usr/local/opt/node@20/bin:$PATH\")",
+      "Bash(__NEW_LINE_06f25dcf627e284f__ cd /Users/mac/Downloads/pho-bo-franshise-redesign-2)",
+      "Bash(__NEW_LINE_06f25dcf627e284f__ echo \"=== Checking more potentially unused images ===\")",
+      "Bash(__NEW_LINE_06f25dcf627e284f__ for file in \"placeholder-logo.png\" \"placeholder-logo.svg\" \"placeholder-user.jpg\" \"placeholder.jpg\" \"placeholder.svg\" \"apple-icon.png\" \"icon-dark-32x32.png\" \"icon-light-32x32.png\" \"Фон.jpeg\" \"hf_20260305_162746_11d3c8c6-25b9-49fe-88a7-3bec7f94ea37.jpeg\" \"Вьетнамский стрит-фуд.png\" \"Главное блюдо.png\" \"Полезная кухня.png\" \"качественное сырье.png\" \"АПЕЛЬСИН МАРАКУЙЯ ФРЕШ.jpg\" \"Красный.jpg\" \"Микс соков.jpg\" \"Микс фреш.jpg\" \"Напиток из вьетнамского кабачка.jpg\" \"Сок Апельсин-Маракуйя.jpg\" \"Чай с тропическими фруктами.jpg\" \"Черноголовка Зеленый чай Лайм мята \\(ПЭТ, 0.5\\).jpg\" \"ананасовый фреш.jpg\" \"апельсиновый фреш.jpg\" \"жасмин.jpg\" \"кофе.jpg\" \"сок апельсин.jpg\" \"чай персик апельсин лемонграсс.jpg\")",
+      "Bash(do)",
+      "Bash(__NEW_LINE_06f25dcf627e284f__ if ! grep -r \"$file\" --include=\"*.tsx\" --include=\"*.ts\" --include=\"*.jsx\" --include=\"*.js\" --include=\"*.css\" --include=\"*.json\" --include=\"*.md\" --exclude-dir=node_modules --exclude-dir=.next .)",
+      "Bash(then)",
+      "Bash(echo \"NOT FOUND: $file\")",
+      "Bash(fi)",
+      "Bash(ssh -o StrictHostKeyChecking=no -o PasswordAuthentication=yes root@194.58.95.203 \"echo connected\" 2)",
+      "Bash(1:*)",
+      "Bash(expect -c ':*)",
+      "Bash(for f in \"химки.jpg\" \"остров мечты.jpg\" \"метрополис.jpg\" \"_MG_9561-HDR.jpg\" \"_MG_9557-HDR.jpg\" \"_MG_9565-HDR.jpg\" \"_MG_9549-HDR.jpg\")",
+      "Bash(do echo \"Optimizing: $f\")",
+      "Bash(grep -v \"^$\")",
+      "Bash(for f in \"hf_20260305_162321_32578502-2741-47d9-9b85-5938e8afd8ab.png\" \"hf_20260220_184855_5e85fce2-c1f6-4150-a42d-c5e6403f43e1.jpeg\")",
+      "Read(//Users/mac/Downloads/pho-bo-franshise-redesign-2/**)",
+      "Bash(for f in \"парк горького 1.jpeg\" \"парк горького 2.jpeg\" \"парк горького 3.jpeg\")"
     ]
   }
 }
