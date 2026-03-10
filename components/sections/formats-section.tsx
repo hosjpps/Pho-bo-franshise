@@ -19,13 +19,13 @@ const formats = [
     id: "foodcourt",
     name: "Фудкорт / Фудхолл",
     images: [
-      { src: "/images/formats/foodcourt-aviapark.jpg", location: "Ходынский б-р, 4, ТЦ «Авиапарк», 4 этаж" },
-      { src: "/images/formats/foodcourt-atrium-1.jpg", location: "ул. Земляной Вал, 33, ТРК «Атриум»" },
-      { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Троицкий просп., 17, ТЦ «ЕвроПарк», Архангельск" },
-      { src: "/метрополис.jpg", location: "Ленинградское ш., 16А, стр. 4, ТЦ «Метрополис»" },
-      { src: "/остров мечты.jpg", location: "пр-т Андропова, 1, ТРЦ «Остров Мечты»" },
-      { src: "/химки.jpg", location: "Микрорайон ИКЕА, 1, ТЦ «МЕГА Химки»" },
-      { src: "/вернадка.jpg", location: "пр-т Вернадского, 86В, ПАРК Фудхолл" },
+      { src: "/images/formats/foodcourt-aviapark.jpg", location: "Москва, Ходынский б-р, 4, ТЦ «Авиапарк», 4 этаж" },
+      { src: "/images/formats/foodcourt-atrium-1.jpg", location: "Москва, ул. Земляной Вал, 33, ТРК «Атриум»" },
+      { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Архангельск, Троицкий просп., 17, ТЦ «ЕвроПарк»" },
+      { src: "/метрополис.jpg", location: "Москва, Ленинградское ш., 16А, стр. 4, ТЦ «Метрополис»" },
+      { src: "/остров мечты.jpg", location: "Москва, пр-т Андропова, 1, ТРЦ «Остров Мечты»" },
+      { src: "/химки.jpg", location: "Химки, Микрорайон ИКЕА, 1, ТЦ «МЕГА»" },
+      { src: "/депо.jpg", location: "Москва, Ленинградский просп., 80, корп. 17, Фудмолл «Депо»" },
     ] as FormatImage[],
     investment: { min: 8, max: 8 },
     profit: 25,
@@ -45,12 +45,10 @@ const formats = [
     id: "street",
     name: "Стрит-ритейл",
     images: [
-      { src: "/_MG_9549-HDR.jpg", location: "ул. Новослободская, Москва", position: "40% 5%" },
-      { src: "/_MG_9561-HDR.jpg", location: "ул. Новослободская, Москва" },
-      { src: "/_MG_9565-HDR.jpg", location: "ул. Новослободская, Москва" },
-      { src: "/парк горького 1.jpeg", location: "ул. Крымский Вал, 9, Парк Горького" },
-      { src: "/парк горького 2.jpeg", location: "ул. Крымский Вал, 9, Парк Горького" },
-      { src: "/парк горького 3.jpeg", location: "ул. Крымский Вал, 9, Парк Горького" },
+      { src: "/_MG_9549-HDR.jpg", location: "Москва, ул. Новослободская, 20", position: "40% 5%" },
+      { src: "/_MG_9561-HDR.jpg", location: "Москва, ул. Новослободская, 20" },
+      { src: "/_MG_9565-HDR.jpg", location: "Москва, ул. Новослободская, 20" },
+      { src: "/парк горького 1.jpeg", location: "Москва, ул. Крымский Вал, 9, Парк Горького" },
     ] as FormatImage[],
     investment: { min: 9, max: 12 },
     profit: 25,
@@ -121,17 +119,17 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
           <>
             <button
               onClick={() => goTo(currentIndex - 1)}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center text-white sm:opacity-0 sm:group-hover:opacity-100 transition-opacity active:bg-black/60 hover:bg-black/50"
               aria-label="Предыдущее фото"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={() => goTo(currentIndex + 1)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center text-white sm:opacity-0 sm:group-hover:opacity-100 transition-opacity active:bg-black/60 hover:bg-black/50"
               aria-label="Следующее фото"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-6 h-6" />
             </button>
           </>
         )}

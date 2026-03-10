@@ -20,7 +20,11 @@
       "Bash(grep -v \"^$\")",
       "Bash(for f in \"hf_20260305_162321_32578502-2741-47d9-9b85-5938e8afd8ab.png\" \"hf_20260220_184855_5e85fce2-c1f6-4150-a42d-c5e6403f43e1.jpeg\")",
       "Read(//Users/mac/Downloads/pho-bo-franshise-redesign-2/**)",
-      "Bash(for f in \"парк горького 1.jpeg\" \"парк горького 2.jpeg\" \"парк горького 3.jpeg\")"
+      "Bash(for f in \"парк горького 1.jpeg\" \"парк горького 2.jpeg\" \"парк горького 3.jpeg\")",
+      "Bash(export PATH=\"/usr/local/opt/node@20/bin:/usr/bin:/bin:$PATH\")",
+      "Bash(/usr/bin/tail -20)",
+      "Bash(tr '>' '\\\\n')",
+      "Read(//Users/mac/Downloads/pho-bo-franshise-redesign-2/public/**)"
     ]
   }
 }

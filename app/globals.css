@@ -41,7 +41,7 @@
 
   /* Custom PhoBo Colors */
   --forest: #1B6457;
-  --forest-dark: #144a40;
+  --forest-dark: #1B6457;
   --forest-light: #238072;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
