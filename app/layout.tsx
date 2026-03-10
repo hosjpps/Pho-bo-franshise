@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PhoBo | Франшиза вьетнамской кухни",
     description: "Откройте своё кафе вьетнамской кухни PhoBo. Чистая прибыль до 25%.",
-    images: ["/pho-bo-vietnamese-beef-soup-in-ceramic-bowl-with-h.jpg"],
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://franchise.phobo.cafe",
