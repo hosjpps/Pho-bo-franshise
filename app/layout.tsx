@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "PhoBo Франшиза",
     images: [
       {
-        url: "/pho-bo-vietnamese-beef-soup-in-ceramic-bowl-with-h.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "PhoBo — франшиза вьетнамской кухни",
