@@ -12,6 +12,7 @@ interface FormatImage {
   src: string
   location: string
   position?: string
+  scale?: number
 }
 
 const formats = [
@@ -22,7 +23,7 @@ const formats = [
       { src: "/images/formats/foodcourt-aviapark.jpg", location: "Москва, Ходынский б-р, 4, ТЦ «Авиапарк», 4 этаж" },
       { src: "/images/formats/foodcourt-atrium-1.jpg", location: "Москва, ул. Земляной Вал, 33, ТРК «Атриум»" },
       { src: "/images/formats/foodmall-arkhangelsk.jpg", location: "Архангельск, Троицкий просп., 17, ТЦ «ЕвроПарк»" },
-      { src: "/метрополис.jpg", location: "Москва, Ленинградское ш., 16А, стр. 4, ТЦ «Метрополис»" },
+      { src: "/метрополис.jpeg", location: "Москва, Ленинградское ш., 16А, стр. 4, ТЦ «Метрополис»", position: "center 35%", scale: 1.2 },
       { src: "/остров мечты.jpg", location: "Москва, пр-т Андропова, 1, ТРЦ «Остров Мечты»" },
       { src: "/химки.jpg", location: "Химки, Микрорайон ИКЕА, 1, ТЦ «МЕГА»" },
       { src: "/депо.jpg", location: "Москва, Ленинградский просп., 80, корп. 17, Фудмолл «Депо»" },
@@ -105,8 +106,8 @@ function FormatExamples({ format }: { format: (typeof formats)[0] }) {
             key={currentIndex}
             src={currentImage.src}
             alt={currentImage.location || format.name}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: (currentImage.scale || 1) * 1.02 }}
+            animate={{ opacity: 1, scale: currentImage.scale || 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="absolute inset-0 w-full h-full object-cover"
