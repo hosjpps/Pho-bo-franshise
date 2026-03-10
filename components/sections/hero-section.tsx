@@ -106,7 +106,7 @@ export function HeroSection() {
             size="lg"
             className="w-full sm:w-auto bg-forest hover:bg-forest-dark text-white text-lg px-8 py-6 rounded-xl gap-2 shadow-xl hover:shadow-2xl transition-all hover:scale-105"
           >
-            <a href="/presentation.pdf" download>
+            <a href="/presentation.pdf" download="Франшиза PhoBo.pdf">
               <Download className="w-5 h-5" />
               Скачать презентацию
             </a>
