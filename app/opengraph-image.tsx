@@ -17,33 +17,19 @@ export default function Image() {
           width: "100%",
           height: "100%",
           backgroundColor: "#ffffff",
-          gap: 24,
         }}
       >
-        <div style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
-          <span style={{ fontSize: 120, fontWeight: 700, color: "#000000" }}>
-            Phở
-          </span>
-          <span style={{ fontSize: 120, fontWeight: 700, color: "#DC2626" }}>
-            Bò
-          </span>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://franchise.phobo.cafe/images/phobo-logo.png"
+          width={500}
+          alt="PhoBo"
+          style={{ marginBottom: 24 }}
+        />
         <span
           style={{
-            fontSize: 28,
-            letterSpacing: "0.2em",
-            color: "#1B6457",
-            textTransform: "uppercase",
-            opacity: 0.7,
-          }}
-        >
-          Вьетнамская кухня
-        </span>
-        <span
-          style={{
-            fontSize: 32,
+            fontSize: 36,
             color: "#374151",
-            marginTop: 16,
           }}
         >
           Франшиза
