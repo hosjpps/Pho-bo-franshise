@@ -30,20 +30,11 @@ export const metadata: Metadata = {
     url: "https://franchise.phobo.cafe",
     locale: "ru_RU",
     siteName: "PhoBo Франшиза",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "PhoBo — франшиза вьетнамской кухни",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PhoBo | Франшиза вьетнамской кухни",
     description: "Откройте своё кафе вьетнамской кухни PhoBo. Чистая прибыль до 25%.",
-    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://franchise.phobo.cafe",
