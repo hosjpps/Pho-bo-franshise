@@ -21,7 +21,7 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
-          <span style={{ fontSize: 120, fontWeight: 700, color: "#1a1a1a" }}>
+          <span style={{ fontSize: 120, fontWeight: 700, color: "#000000" }}>
             Phở
           </span>
           <span style={{ fontSize: 120, fontWeight: 700, color: "#DC2626" }}>
