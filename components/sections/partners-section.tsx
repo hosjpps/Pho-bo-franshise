@@ -1,106 +1,143 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { Play } from "lucide-react"
+import { Play, X, TrendingUp, MapPin } from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
 
 const partners = [
   {
-    name: "Алексей",
-    city: "Москва",
-    image: "/russian-man-business-owner-restaurant-smiling-port.jpg",
-    revenue: "2 450 000",
-    openingDayRevenue: "156 800",
-    quote:
-      "Выбрал PhoBo, потому что видел их рост на рынке. Команда помогла с выбором локации, обучением персонала и запуском. Окупился за 5 месяцев — это даже быстрее, чем планировал.",
+    city: "Москва, ТЦ «Авиапарк»",
+    image: "/images/formats/foodcourt-aviapark.jpg",
+    revenue: "2,8 млн",
+    period: "руб/мес",
+    payback: "6 мес",
+    comment: "Точка на 4 этаже крупнейшего ТЦ Москвы. Высокий поток гостей с первого дня — выручка в день открытия составила 187 000 руб. Стабильный рост за счёт узнаваемости бренда и качества продукта.",
+    hasVideo: false,
   },
   {
-    name: "Марина",
-    city: "Санкт-Петербург",
-    image: "/russian-woman-business-owner-cafe-smiling-portrait.jpg",
-    revenue: "1 890 000",
-    openingDayRevenue: "142 350",
-    quote:
-      "Для меня это первый бизнес в общепите. PhoBo дали полную поддержку — от выбора помещения до первого дня работы. Сейчас уже планирую вторую точку.",
+    city: "Ереван, Армения",
+    image: "/images/formats/foodcourt-atrium-1.jpg",
+    revenue: "1,9 млн",
+    period: "руб/мес",
+    payback: "8 мес",
+    comment: "Первая международная точка PhoBo. Запуск прошёл при полной поддержке команды — от адаптации меню до обучения персонала. Гости оценили качество с первого дня, выручка превзошла ожидания уже на старте.",
+    hasVideo: true,
+    videoSrc: "",
   },
   {
-    name: "Дмитрий",
-    city: "Казань",
-    image: "/russian-man-entrepreneur-restaurant-owner-confiden.jpg",
-    revenue: "2 780 000",
-    openingDayRevenue: "189 450",
-    quote:
-      "Открыл точку на фудкорте в ТЦ. Качество продукта и узнаваемость бренда сразу дали поток гостей. Очень доволен поддержкой команды PhoBo на всех этапах.",
+    city: "Москва, ул. Новослободская",
+    image: "/_MG_9549-HDR.jpg",
+    revenue: "3,2 млн",
+    period: "руб/мес",
+    payback: "5 мес",
+    comment: "Формат стрит-ритейл в центре Москвы. Удачная локация рядом с метро и бизнес-центрами обеспечила стабильный поток гостей в обед и вечером. Самая быстрая окупаемость среди всех точек сети.",
+    hasVideo: false,
   },
 ]
 
 export function PartnersSection() {
+  const [videoOpen, setVideoOpen] = useState(false)
+  const [videoSrc, setVideoSrc] = useState("")
+
+  const openVideo = (src: string) => {
+    if (!src) return
+    setVideoSrc(src)
+    setVideoOpen(true)
+  }
+
   return (
     <section id="partners" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          badge="НАШИ ПАРТНЕРЫ"
-          title="Отзывы владельцев франшиз"
-          subtitle="Реальные истории успеха наших партнеров по всей России"
+          badge="НАШИ ПАРТНЁРЫ"
+          title="Результаты франчайзи"
+          subtitle="Реальные показатели точек PhoBo по всей России и за рубежом"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {partners.map((partner, index) => (
             <motion.div
-              key={partner.name}
+              key={partner.city}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="group"
             >
               {/* Photo */}
-              <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[3/4]">
+              <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3]">
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url('${partner.image}')` }}
                 />
-                {/* Play button */}
-                <button
-                  aria-label={`Воспроизвести видео-отзыв ${partner.name}`}
-                  className="absolute bottom-4 left-4 w-12 h-12 rounded-full bg-red-500 flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors"
-                >
-                  <Play className="w-5 h-5 text-white fill-white ml-0.5" aria-hidden="true" />
-                </button>
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-              {/* Name & City */}
-              <div className="flex items-baseline gap-3 mb-4">
-                <h3 className="text-2xl font-bold text-foreground">{partner.name}</h3>
-                <span className="text-muted-foreground">{partner.city}</span>
+                {/* Play button for video */}
+                {partner.hasVideo && (
+                  <button
+                    onClick={() => openVideo(partner.videoSrc || "")}
+                    aria-label="Смотреть видео-отзыв"
+                    className="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-red-500 flex items-center justify-center shadow-lg hover:bg-red-600 hover:scale-110 transition-all z-10"
+                  >
+                    <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                  </button>
+                )}
+
+                {/* City badge */}
+                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-forest" />
+                  <span className="text-xs font-medium text-foreground">{partner.city}</span>
+                </div>
               </div>
 
               {/* Revenue */}
-              <div className="mb-4">
-                <p className="text-3xl sm:text-4xl font-bold text-foreground">
-                  {partner.revenue} <span className="text-base font-medium text-muted-foreground">руб/мес</span>
+              <div className="flex items-baseline gap-2 mb-2">
+                <TrendingUp className="w-5 h-5 text-forest shrink-0" />
+                <p className="text-3xl font-bold text-foreground">
+                  {partner.revenue}
+                  <span className="text-sm font-medium text-muted-foreground ml-2">{partner.period}</span>
                 </p>
-                <p className="text-sm text-muted-foreground mt-1">Выручка за 1-й месяц работы</p>
               </div>
 
-              {/* Red separator */}
-              <div className="w-12 h-0.5 bg-red-500 mb-4" />
-
-              {/* Opening day revenue */}
-              <p className="text-sm text-muted-foreground mb-4">
-                В день торжественного открытия выручка {partner.openingDayRevenue} руб.
+              {/* Payback */}
+              <p className="text-sm font-medium text-forest mb-3">
+                Окупаемость: {partner.payback}
               </p>
 
-              {/* Quote */}
+              {/* Comment */}
               <p className="text-sm text-muted-foreground leading-relaxed">
-                &ldquo;{partner.quote}&rdquo;
+                {partner.comment}
               </p>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Video modal */}
+      {videoOpen && videoSrc && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div className="relative w-full max-w-4xl aspect-video" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setVideoOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <video
+              src={videoSrc}
+              controls
+              autoPlay
+              className="w-full h-full rounded-xl"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
