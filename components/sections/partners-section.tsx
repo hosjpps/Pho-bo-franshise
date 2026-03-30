@@ -5,33 +5,52 @@ import { motion } from "framer-motion"
 import { Play, X, TrendingUp, MapPin } from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
 
-const partners = [
+const partners: {
+  name: string
+  city: string
+  image: string
+  position?: string
+  scale?: number
+  revenue: string
+  period: string
+  payback: string
+  comment: string
+  hasVideo: boolean
+  videoSrc?: string
+}[] = [
   {
-    city: "Москва, ТЦ «Авиапарк»",
-    image: "/images/formats/foodcourt-aviapark.jpg",
+    name: "Егор",
+    city: "Новокузнецк",
+    image: "/images/partners/novokuznetsk.jpg",
+    position: "center 50%",
+    scale: 1.6,
     revenue: "2,8 млн",
     period: "руб/мес",
     payback: "6 мес",
-    comment: "Точка на 4 этаже крупнейшего ТЦ Москвы. Высокий поток гостей с первого дня — выручка в день открытия составила 187 000 руб. Стабильный рост за счёт узнаваемости бренда и качества продукта.",
+    comment: "Открыл точку в торговом центре — поток гостей с первого дня. Команда PhoBo помогла с выбором локации, обучением персонала и запуском. Выручка в день открытия составила 187 000 руб., стабильный рост каждый месяц.",
     hasVideo: false,
   },
   {
+    name: "Евгений",
     city: "Ереван, Армения",
-    image: "/images/formats/foodcourt-atrium-1.jpg",
+    image: "/images/partners/erevan.jpg",
     revenue: "1,9 млн",
     period: "руб/мес",
     payback: "8 мес",
     comment: "Первая международная точка PhoBo. Запуск прошёл при полной поддержке команды — от адаптации меню до обучения персонала. Гости оценили качество с первого дня, выручка превзошла ожидания уже на старте.",
     hasVideo: true,
-    videoSrc: "",
+    videoSrc: "/images/partners/erevan.mp4",
   },
   {
-    city: "Москва, ул. Новослободская",
-    image: "/_MG_9549-HDR.jpg",
+    name: "Игорь",
+    city: "Старый Оскол",
+    image: "/images/partners/oskol.jpg",
+    position: "left center",
+    scale: 1.08,
     revenue: "3,2 млн",
     period: "руб/мес",
     payback: "5 мес",
-    comment: "Формат стрит-ритейл в центре Москвы. Удачная локация рядом с метро и бизнес-центрами обеспечила стабильный поток гостей в обед и вечером. Самая быстрая окупаемость среди всех точек сети.",
+    comment: "Удачная локация обеспечила стабильный поток гостей с первых дней. Узнаваемость бренда PhoBo и качество продукта работают — гости возвращаются. Самая быстрая окупаемость среди точек сети.",
     hasVideo: false,
   },
 ]
@@ -70,8 +89,12 @@ export function PartnersSection() {
               {/* Photo */}
               <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3]">
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url('${partner.image}')` }}
+                  className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    backgroundImage: `url('${partner.image}')`,
+                    backgroundPosition: partner.position || "center",
+                    backgroundSize: partner.scale ? `${partner.scale * 100}%` : "cover",
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
@@ -91,6 +114,12 @@ export function PartnersSection() {
                   <MapPin className="w-3.5 h-3.5 text-forest" />
                   <span className="text-xs font-medium text-foreground">{partner.city}</span>
                 </div>
+              </div>
+
+              {/* Name & City */}
+              <div className="flex items-baseline gap-3 mb-3">
+                <h3 className="text-xl font-bold text-foreground">{partner.name}</h3>
+                <span className="text-sm text-muted-foreground">{partner.city}</span>
               </div>
 
               {/* Revenue */}
@@ -122,7 +151,7 @@ export function PartnersSection() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
           onClick={() => setVideoOpen(false)}
         >
-          <div className="relative w-full max-w-4xl aspect-video" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-h-[85vh] aspect-[9/16]" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setVideoOpen(false)}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
@@ -133,7 +162,7 @@ export function PartnersSection() {
               src={videoSrc}
               controls
               autoPlay
-              className="w-full h-full rounded-xl"
+              className="w-full h-full rounded-xl object-contain"
             />
           </div>
         </div>
