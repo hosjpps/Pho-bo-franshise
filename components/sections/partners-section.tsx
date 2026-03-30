@@ -72,7 +72,7 @@ export function PartnersSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           badge="НАШИ ПАРТНЁРЫ"
-          title="Результаты франчайзи"
+          title="Результаты и отзывы франчайзи"
           subtitle="Реальные показатели точек PhoBo по всей России и за рубежом"
         />
 
