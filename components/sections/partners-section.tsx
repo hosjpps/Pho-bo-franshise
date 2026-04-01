@@ -22,8 +22,8 @@ const partners: {
     name: "Егор",
     city: "Новокузнецк",
     image: "/images/partners/novokuznetsk.jpg",
-    position: "center 50%",
-    scale: 1.6,
+    position: "center 40%",
+    scale: 1.3,
     revenue: "2,8 млн",
     period: "руб/мес",
     payback: "6 мес",
@@ -34,6 +34,8 @@ const partners: {
     name: "Евгений",
     city: "Ереван, Армения",
     image: "/images/partners/erevan.jpg",
+    position: "center 35%",
+    scale: 1.1,
     revenue: "1,9 млн",
     period: "руб/мес",
     payback: "8 мес",
@@ -130,11 +132,6 @@ export function PartnersSection() {
                   <span className="text-sm font-medium text-muted-foreground ml-2">{partner.period}</span>
                 </p>
               </div>
-
-              {/* Payback */}
-              <p className="text-sm font-medium text-forest mb-3">
-                Окупаемость: {partner.payback}
-              </p>
 
               {/* Comment */}
               <p className="text-sm text-muted-foreground leading-relaxed">

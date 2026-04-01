@@ -92,7 +92,7 @@ function StarRating({ rating, size = "sm" }: { rating: number; size?: "sm" | "lg
 
 export function ReviewsSection() {
   return (
-    <section id="reviews" className="py-24 lg:py-32 relative overflow-hidden bg-white">
+    <section id="reviews" className="py-24 lg:py-32 relative overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           badge="ОТЗЫВЫ"
@@ -105,7 +105,7 @@ export function ReviewsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gray-50 rounded-3xl p-8 sm:p-10 mb-12"
+          className="bg-forest rounded-3xl p-8 sm:p-10 mb-12"
         >
           {/* Top row: big rating + platforms */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -113,13 +113,13 @@ export function ReviewsSection() {
             <div className="flex items-center gap-5">
               <div className="flex flex-col items-center">
                 <StarRating rating={4.77} size="lg" />
-                <span className="text-6xl font-bold text-foreground mt-1">4.77</span>
+                <span className="text-6xl font-bold text-white mt-1">4.77</span>
               </div>
-              <div className="h-16 w-px bg-gray-300 hidden sm:block" />
+              <div className="h-16 w-px bg-white/30 hidden sm:block" />
               <div className="hidden sm:block">
-                <p className="text-3xl font-bold text-foreground">35 077</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">отзывов</p>
-                <div className="flex items-center gap-1.5 mt-1.5 text-xs text-green-600">
+                <p className="text-3xl font-bold text-white">35 077</p>
+                <p className="text-sm text-white/60 uppercase tracking-wider">отзывов</p>
+                <div className="flex items-center gap-1.5 mt-1.5 text-xs text-white/80">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -135,8 +135,8 @@ export function ReviewsSection() {
                   <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-sm">
                     <img src={platform.icon} alt={platform.name} className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-base font-bold text-foreground">{platform.rating}</span>
-                  <span className="text-[10px] text-muted-foreground whitespace-nowrap">{platform.count}</span>
+                  <span className="text-base font-bold text-white">{platform.rating}</span>
+                  <span className="text-[10px] text-white/60 whitespace-nowrap">{platform.count}</span>
                 </div>
               ))}
             </div>
@@ -144,8 +144,8 @@ export function ReviewsSection() {
 
           {/* Mobile: total count */}
           <div className="flex items-center justify-center gap-3 mt-6 sm:hidden">
-            <p className="text-2xl font-bold text-foreground">35 077</p>
-            <p className="text-sm text-muted-foreground">подтверждённых отзывов</p>
+            <p className="text-2xl font-bold text-white">35 077</p>
+            <p className="text-sm text-white/60">подтверждённых отзывов</p>
           </div>
         </motion.div>
 
@@ -158,20 +158,20 @@ export function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col"
+              className="bg-forest rounded-2xl p-6 flex flex-col"
             >
               <div className="text-3xl text-yellow-400 font-serif leading-none mb-2">&ldquo;</div>
               <div className="mb-3">
                 <StarRating rating={review.rating} />
               </div>
-              <p className="text-sm text-foreground/80 leading-relaxed mb-auto pb-5">{review.text}</p>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div className="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center text-xs font-bold text-forest">
+              <p className="text-sm text-white/80 leading-relaxed mb-auto pb-5">{review.text}</p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold text-white">
                   {review.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{review.name}</p>
-                  <p className="text-xs text-muted-foreground">{review.date}</p>
+                  <p className="text-sm font-semibold text-white">{review.name}</p>
+                  <p className="text-xs text-white/50">{review.date}</p>
                 </div>
               </div>
             </motion.div>
@@ -187,10 +187,10 @@ export function ReviewsSection() {
           className="flex justify-center mt-10"
         >
           <a
-            href="https://yandex.ru/maps/org/pho_bo/1124622839/reviews/"
+            href="https://yandex.ru/maps/?text=PhoBo+%D0%B2%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D1%81%D0%BA%D0%B0%D1%8F+%D0%BA%D1%83%D1%85%D0%BD%D1%8F"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-sm font-medium text-foreground hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-forest text-sm font-medium text-forest hover:bg-forest/5 transition-colors"
           >
             Читать все отзывы на Яндекс Картах
             <ExternalLink className="w-4 h-4" />
